@@ -193,7 +193,7 @@ export default function HealthTracker() {
   const CIRC = 2 * Math.PI * R;
 
   return (
-    <div dir="rtl" className="min-h-screen bg-stone-50 text-stone-800 py-6 px-4" style={{ fontFamily: "Tahoma, 'Segoe UI', sans-serif" }}>
+    <div dir="rtl" className="min-h-screen bg-stone-50 text-stone-800 py-6 px-4" style={{ fontFamily: "-apple-system, Tahoma, 'Segoe UI', sans-serif" }}>
       <div className="max-w-md mx-auto">
 
         {/* تقویم کوچک بالای اپ */}
@@ -264,14 +264,14 @@ export default function HealthTracker() {
         <section className="bg-white rounded-2xl shadow-sm border border-stone-200 p-5 mb-4">
           <h2 className="font-bold text-teal-800 mb-3">خواب و وزن امروز</h2>
           <div className="flex gap-3 mb-3">
-            <label className="flex-1">
+            <label className="flex-1 min-w-0">
               <span className="block text-xs text-stone-500 mb-1">ساعت خوابیدن 🌙</span>
               <input type="time" disabled={locked}
                 value={locked ? (todayEntry.bedTime || "") : draft.bedTime}
                 onChange={(e) => setField("bedTime", e.target.value)}
                 className="w-full rounded-xl border border-stone-300 px-3 py-2 text-sm focus:outline-none focus:border-teal-400 disabled:bg-stone-100 disabled:text-stone-400" />
             </label>
-            <label className="flex-1">
+            <label className="flex-1 min-w-0">
               <span className="block text-xs text-stone-500 mb-1">ساعت بیدار شدن ☀️</span>
               <input type="time" disabled={locked}
                 value={locked ? (todayEntry.wakeTime || "") : draft.wakeTime}

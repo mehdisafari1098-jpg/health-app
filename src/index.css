@@ -5,3 +5,34 @@ html, body {
   padding: 0;
   background: #f8f7f4;
 }
+
+/* حالت اپ مستقل روی iPhone: محتوا زیر ساعت و ناچ نرود */
+#root {
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* ورودی‌های ساعت و عدد در Safari آیفون:
+   استایل پیش‌فرض iOS را خنثی می‌کنیم تا چیدمان RTL به‌هم نریزد */
+input[type="time"],
+input[type="number"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #ffffff;
+  min-height: 46px;
+  font-size: 16px; /* زیر ۱۶ باشد iOS موقع تایپ زوم می‌کند و صفحه به‌هم می‌ریزد */
+  border-radius: 12px;
+}
+
+input[type="time"] {
+  direction: ltr;
+  text-align: center;
+  min-width: 0;
+  width: 100%;
+}
+
+/* نمایش بهتر فیلد خالی ساعت در iOS */
+input[type="time"]::-webkit-date-and-time-value {
+  text-align: center;
+  min-height: 1.2em;
+}
